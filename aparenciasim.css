@@ -1,0 +1,106 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffcccb; /* Fundo rosa claro */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+
+.container {
+    z-index: 2; /* Garante que os textos fiquem acima da imagem */
+}
+
+.gatinho-imagem {
+    width: 80%; /* Ajuste para telas menores */
+    max-width: 300px; /* Limite máximo para telas maiores */
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1; /* Garante que a imagem fique no fundo */
+}
+
+.gatinho-imagem:hover {
+    transform: scale(1.1); /* Aumenta a imagem quando o mouse passa por cima */
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeInAnimation 1s forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeInAnimation {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animação de corações caindo */
+.hearts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 3; /* Garante que os corações fiquem acima da imagem */
+}
+
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ff6f91;
+    clip-path: polygon(50% 0%, 100% 35%, 82% 100%, 50% 70%, 18% 100%, 0% 35%);
+    animation: fall 5s infinite;
+    opacity: 0.8;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}
+
+/* Animação de fogos de artifício */
+.fireworks {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 4; /* Garante que os fogos de artifício fiquem acima da imagem */
+}
+
+.firework {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: #ffffff;
+    box-shadow: 0 0 5px #ffffff;
+    border-radius: 50%;
+    animation: firework 1s ease-out forwards;
+}
+
+@keyframes firework {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
