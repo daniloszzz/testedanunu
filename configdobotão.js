@@ -28,6 +28,6 @@ window.addEventListener('resize', () => {
     const maxY = window.innerHeight - naoButton.offsetHeight - 50;
     const centerX = (window.innerWidth - naoButton.offsetWidth) / 2;
     const centerY = (window.innerHeight - naoButton.offsetHeight) / 2;
-    naoButton.style.left = `${centerX}px`;
-    naoButton.style.top = `${centerY}px`;
+    naoButton.style.left = `100px`;
+    naoButton.style.top = `50px`;
 });
